@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cheliv Compassionate Care Plus INC</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font: Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    .logo-green { color: #a3c84a; }
+    .logo-blue { color: #48a8de; }
+    .disease-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.4s ease-out; }
+
+    /* Toast animations */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(12px) scale(.98); }
+}
+
+/* when showing: add these classes via JS */
+.toast-show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  animation: toast-in 260ms ease-out forwards;
+}
+.toast-hide {
+  animation: toast-out 220ms ease-in forwards;
+}
+
+  </style>
+</head>
+
+<body class="bg-gray-300">
+
+  <!-- Header -->
+  <header class="w-full bg-white border-b border-gray-100 rounded-3xl">
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+
+      <!-- Logo -->
+      <div class="flex flex-col leading-none">
+        <span class="text-xl font-bold tracking-wider logo-green">Cheliv Compassionate</span>
+        <span class="text-xl font-semibold logo-blue tracking-wide">Care Plus INC</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-10 text-sm font-medium text-gray-800">
+        <a href="#" class="hover:text-sky-600 flex items-center gap-2">
+          <i class="fa-solid fa-house text-gray-500 text-xs"></i> Home
+        </a>
+        <a href="#" class="hover:text-sky-600 flex items-center gap-2">
+          <i class="fa-solid fa-briefcase-medical text-gray-500 text-xs"></i> What We Do
+        </a>
+        <a href="#" class="hover:text-sky-600 flex items-center gap-2">
+          <i class="fa-solid fa-hand-holding-heart text-gray-500 text-xs"></i> Our Programs
+        </a>
+        <a href="#" class="hover:text-sky-600 flex items-center gap-2">
+          <i class="fa-solid fa-user-group text-gray-500 text-xs"></i> Work With Us
+        </a>
+        <a href="about.html" class="hover:text-sky-600 flex items-center gap-2">
+          <i class="fa-solid fa-circle-info text-gray-500 text-xs"></i> About
+        </a>
+      </nav>
+
+      <!-- Contact Button -->
+      <a href="#requestForm"
+         class="hidden md:flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 hover:shadow-md transition">
+        <span class="text-sm font-medium text-gray-800">Contact Us</span>
+        <span class="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </span>
+      </a>
+
+      <!-- Mobile Menu -->
+      <button class="md:hidden text-gray-700 text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section class="py-20 rounded-3xl">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
+
+    <!-- Left Text Content -->
+    <div class="flex-1 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        <span class="bg-lime-100 px-2 rounded">We help you</span><br />
+        manage your<br />
+        illness at home
+      </h1>
+
+      <p class="mt-6 text-gray-600 text-base leading-relaxed max-w-lg">
+        Through expert disease management, personalized support, and hands-on education,
+        we empower you to heal — and stay healthy — in the comfort of home.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <!-- Blue Button -->
+        <a href="#"
+          class="inline-flex items-center justify-center gap-3 bg-sky-500 text-white font-medium px-6 py-3 rounded-full hover:bg-sky-600 transition">
+          Explore Our Services
+          <span class="w-8 h-8 bg-white text-sky-500 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </span>
+        </a>
+
+        <!-- Outline Button -->
+        <a href="#"
+          class="inline-flex items-center justify-center gap-3 border border-gray-300 text-gray-800 font-medium px-6 py-3 rounded-full hover:bg-gray-100 transition">
+          Request Information
+          <span class="w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="flex-1">
+      <img
+        src="images/black-doctor-comforting-senior-man-while-talking-him-home-visit.jpg"
+        alt="Elderly patient with healthcare provider"
+        class="rounded-2xl w-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+<section class="bg-white py-20 rounded-[17%]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- CENTERED SECTION LABEL -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        <span class="bg-lime-100 px-4 py-2 rounded-full">Beyond Treatment</span>
+      </h2>
+    </div>
+
+    <!-- TWO COLUMN LAYOUT -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+      
+      <!-- LEFT GRAPH -->
+      <div class="flex-1 flex justify-center">
+        <div class="w-full max-w-md">
+          <!-- Logo -->
+          <div class="text-center mb-4">
+            <h4 class="text-xl font-bold text-lime-600">CHELIV COMPASSIONATE</h4>
+            <p class="text-sky-600 font-semibold text-sm -mt-1">CARE PLUS INC</p>
+          </div>
+
+          <!-- SVG GRAPH -->
+          <svg viewBox="0 0 400 250" class="w-full">
+            <!-- TREAT box -->
+            <rect x="30" y="130" width="100" height="90" rx="6" fill="#d7e6b2"></rect>
+            <text x="80" y="160" text-anchor="middle" font-size="20" font-weight="bold" fill="#000">
+              TREAT
+            </text>
+            <text x="80" y="180" text-anchor="middle" font-size="10" fill="#444">
+              an illness or injury
+            </text>
+            <text x="80" y="192" text-anchor="middle" font-size="10" fill="#444">
+              after a hospital stay
+            </text>
+            <text x="80" y="204" text-anchor="middle" font-size="10" fill="#444">
+              or a new diagnosis
+            </text>
+
+            <!-- TEACH box -->
+            <rect x="150" y="60" width="130" height="160" rx="6" fill="#bcd5ec"></rect>
+            <text x="215" y="130" text-anchor="middle" font-size="20" font-weight="bold" fill="#000">
+              TEACH
+            </text>
+            <text x="215" y="150" text-anchor="middle" font-size="10" fill="#444">
+              empowerment to
+            </text>
+            <text x="215" y="162" text-anchor="middle" font-size="10" fill="#444">
+              self-manage your
+            </text>
+            <text x="215" y="174" text-anchor="middle" font-size="10" fill="#444">
+              illness at home
+            </text>
+
+           
+          </svg>
+        </div>
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="flex-1 text-center md:text-left">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug mb-4">
+          We Treat Your Illness —<br class="hidden md:block" /> Then Teach You to Manage It
+        </h3>
+
+        <p class="text-gray-600 text-base leading-relaxed max-w-lg mx-auto md:mx-0 mb-8">
+          While most home health agencies focus on short-term recovery, we go further. 
+          Our approach combines disease treatment with caregiver and patient education — 
+          empowering you to stay healthier, longer.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="#"
+          class="inline-flex items-center justify-center gap-3 bg-sky-500 text-white font-medium px-6 py-3 rounded-full hover:bg-sky-600 transition">
+          Explore Our Approach
+          <span class="w-8 h-8 bg-white text-sky-500 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Section Title -->
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-12">What We Do</h2>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-amber-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/Stein_Medicare_Health at Home.png" alt="Medicare Home Health Care" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Medicare Home Health Care</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Disease management, treatment and teaching in the comfort of home
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-blue-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/nurse-navigator.jpg" alt="Nurse Navigator" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Nurse Navigator</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Our Nurse Navigator Intake manages the transition from hospital to home
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-purple-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/nurse-navigator-1041483750.png" alt="Medicare Observation & Assessment" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Medicare Observation & Assessment</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Nurse oversight when there is a reasonable potential for change in condition
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-amber-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/iStock-2148812369-2-1600x1067.jpg" alt="Medicare Management & Evaluation" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Medicare Management & Evaluation</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Nurse supervision to ensure success with a complex care plan
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-blue-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/Clinicient-Blog_Thumb-6b.webp" alt="Medicare Maintenance Therapy" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Medicare Maintenance Therapy</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Long term in-home therapy to prevent functional decline and reduce falls
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-purple-50 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <img src="images/1140-people-cooking-in-kitchen.jpg" alt="Medicare GUIDE Dementia Care" class="rounded-xl mb-4 w-full object-cover">
+        <h3 class="font-bold text-lg text-gray-900 mb-2">Medicare GUIDE Dementia Care</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Dementia care coordination and paid family caregiver respite
+        </p>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="mt-12">
+      <a href="#"
+        class="inline-flex items-center justify-center gap-3 bg-sky-500 text-white font-medium px-8 py-3 rounded-full hover:bg-sky-600 transition">
+        View All
+        <span class="w-8 h-8 bg-white text-sky-500 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-arrow-right text-sm"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-white py-20 rounded-[17%]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        <span class="bg-lime-100 px-4 py-2 rounded-full">What We Believe</span>
+      </h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex flex-col items-center md:grid md:grid-cols-3 gap-8 md:gap-12">
+
+      <!-- LEFT BOXES -->
+      <div class="flex flex-col justify-center gap-6 order-2 md:order-1">
+        <div class="bg-blue-50 text-gray-800 text-center p-6 rounded-xl shadow-sm">
+          <p>We treat every client like family — with dignity, respect, and compassion</p>
+        </div>
+        <div class="bg-blue-50 text-gray-800 text-center p-6 rounded-xl shadow-sm">
+          <p>We believe in evidence-based care tailored to each individual</p>
+        </div>
+      </div>
+
+      <!-- CENTER IMAGE -->
+      <div class="flex justify-center order-1 md:order-2">
+        <img src="images/female-nurse-portrait-with-older-patient.jpg" alt="Caregiver with patient"
+          class="rounded-3xl shadow-md w-full max-w-sm object-cover">
+      </div>
+
+      <!-- RIGHT BOXES -->
+      <div class="flex flex-col justify-center gap-6 order-3">
+        <div class="bg-blue-50 text-gray-800 text-center p-6 rounded-xl shadow-sm">
+          <p>We communicate clearly, anticipate needs, and never say “that’s not my job”</p>
+        </div>
+        <div class="bg-blue-50 text-gray-800 text-center p-6 rounded-xl shadow-sm">
+          <p>We provide real support — no voicemail, no call center, just live help 24/7</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BOX -->
+    <div class="mt-10 flex justify-center">
+      <div class="bg-blue-50 text-gray-800 text-center p-6 rounded-xl shadow-sm max-w-md">
+        <p>We go beyond expectations, with expert care and attention to every detail.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+        <span class="bg-lime-100 px-4 py-2 rounded-full">Why choose Cheliv Compassionate Care Plus INC ?</span>
+      </h2>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left Image -->
+      <div>
+        <img src="images/social-worker-taking-care-old-woman.jpg" alt="Home care service"
+             class="rounded-3xl shadow-md w-full object-cover">
+      </div>
+
+      <!-- Right Text -->
+      <div>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          We know that inviting care into your home is a deeply personal decision. That’s why families trust Cheliv Compassionate Care Plus INC—to deliver more than just care. We provide expertise, respect, and support that feels like family.
+        </p>
+
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <span class="text-lime-600 text-xl mr-3">✔</span>
+            Skilled nurses, therapists, and care coordinators who treat you like family
+          </li>
+          <li class="flex items-start">
+            <span class="text-lime-600 text-xl mr-3">✔</span>
+            Covered by Medicare and major health plans
+          </li>
+          <li class="flex items-start">
+            <span class="text-lime-600 text-xl mr-3">✔</span>
+            Personalized, in-home support plans backed by clinical expertise
+          </li>
+          <li class="flex items-start">
+            <span class="text-lime-600 text-xl mr-3">✔</span>
+            Focus on teaching, empowerment, and ongoing communication
+          </li>
+          <li class="flex items-start">
+            <span class="text-lime-600 text-xl mr-3">✔</span>
+            24/7 access to live support—never a call center or voicemail
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Stats Row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-16">
+      <div class="bg-white shadow-sm rounded-xl p-6">
+        <div class="text-lime-600 text-2xl mb-2">📍</div>
+        <h3 class="text-2xl font-extrabold text-gray-900">10+</h3>
+        <p class="text-gray-600 mt-1">Counties Served</p>
+      </div>
+      <div class="bg-white shadow-sm rounded-xl p-6">
+        <div class="text-lime-600 text-2xl mb-2">🩺</div>
+        <h3 class="text-2xl font-extrabold text-gray-900">50+</h3>
+        <p class="text-gray-600 mt-1">Licensed Clinicians</p>
+      </div>
+      <div class="bg-white shadow-sm rounded-xl p-6">
+        <div class="text-lime-600 text-2xl mb-2">📋</div>
+        <h3 class="text-2xl font-extrabold text-gray-900">1,000+</h3>
+        <p class="text-gray-600 mt-1">Patients Cared for Annually</p>
+      </div>
+      <div class="bg-white shadow-sm rounded-xl p-6">
+        <div class="text-lime-600 text-2xl mb-2">🏡</div>
+        <h3 class="text-2xl font-extrabold text-gray-900">100%</h3>
+        <p class="text-gray-600 mt-1">Focused on Home-Based Recovery</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="bg-white py-20 rounded-[17%]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+          <span class="bg-lime-100 px-4 py-2 rounded-full">Disease Management</span> Programs
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
+        <div><img src="images/2103.i003.001_dementia_alzheimer_illustration.jpg" class="disease-img mb-3" alt="Alzheimer’s Disease"><h3 class="font-semibold text-gray-800">Alzheimer’s Disease</h3></div>
+        <div><img src="images/national-cancer-institute-LnvCEXQwC-o-unsplash.jpg" class="disease-img mb-3" alt="Cancer"><h3 class="font-semibold text-gray-800">Cancer</h3></div>
+        <div><img src="images/kenny-eliason-MEbT27ZrtdE-unsplash.jpg" class="disease-img mb-3" alt="Cardiovascular Diseases"><h3 class="font-semibold text-gray-800">Cardiovascular Diseases</h3></div>
+        <div><img src="images/diabetes-528678_1280.jpg" class="disease-img mb-3" alt="Diabetes"><h3 class="font-semibold text-gray-800">Diabetes</h3></div>
+        <div><img src="images/mockup-graphics-i1iqQRLULlg-unsplash.jpg" class="disease-img mb-3" alt="Hypertension"><h3 class="font-semibold text-gray-800">Hypertension</h3></div>
+        <div><img src="images/national-institute-of-allergy-and-infectious-diseases-FRkC-SiQgx0-unsplash.jpg" class="disease-img mb-3" alt="Infectious Diseases"><h3 class="font-semibold text-gray-800">Infectious Diseases</h3></div>
+        <div><img src="images/nmcr_downloaded_image.png" class="disease-img mb-3" alt="Joint Replacements"><h3 class="font-semibold text-gray-800">Joint Replacements</h3></div>
+        <div><img src="images/robina-weermeijer-sRXCFkJahGk-unsplash.jpg" class="disease-img mb-3" alt="Kidney Diseases"><h3 class="font-semibold text-gray-800">Kidney Diseases</h3></div>
+        <div><img src="images/the-new-york-public-library-tBZXYspGH_M-unsplash.jpg" class="disease-img mb-3" alt="Neurological Disorders"><h3 class="font-semibold text-gray-800">Neurological Disorders</h3></div>
+        <div><img src="images/vitaly-gariev-oyZfrQrVipY-unsplash.jpg" class="disease-img mb-3" alt="Pain Management"><h3 class="font-semibold text-gray-800">Pain Management</h3></div>
+        <div><img src="images/aakash-dhage-YhhrVdYgICc-unsplash.jpg" class="disease-img mb-3" alt="Respiratory Diseases"><h3 class="font-semibold text-gray-800">Respiratory Diseases</h3></div>
+        <div><img src="images/WoundTreatment.jpg" class="disease-img mb-3" alt="Wounds"><h3 class="font-semibold text-gray-800">Wounds</h3></div>
+      </div>
+    </div>
+  </section>
+
+
+<section class=" py-16 px-4 ">
+  <div class="max-w-3xl mx-auto text-center mb-10">
+    <h2 class="text-3xl font-bold text-gray-900">
+      <span class="bg-lime-100 px-4 py-1 rounded-full">Request Information</span>
+    </h2>
+    <p class="text-gray-600 mt-3">
+      Choosing the right home health care partner is important.<br>
+      Let's talk about what matters most to you.
+    </p>
+  </div>
+
+  <!-- FORM -->
+  <form id="requestForm" class="bg-white rounded-2xl shadow p-8 space-y-6 max-w-3xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <input type="text" name="firstName" placeholder="First Name" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none" required>
+      <input type="text" name="lastName" placeholder="Last Name" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none" required>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <input type="email" name="email" placeholder="Email" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none" required>
+      <input type="tel" name="phone" placeholder="Phone number" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none">
+    </div>
+
+    <textarea name="reason" rows="5" placeholder="Reason of Inquiry" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none"></textarea>
+
+    <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 mx-auto transition-all">
+      Submit
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </button>
+  </form>
+
+ <!-- TOAST (replace previous toast markup with this) -->
+<div id="toast" role="status" aria-live="polite" class="fixed z-50 right-6 bottom-6 sm:bottom-8 sm:right-8 left-6 sm:left-auto pointer-events-none hidden">
+  <div id="toastCard" class="max-w-md mx-auto sm:mx-0 bg-white border border-gray-200 shadow-lg rounded-lg p-4 flex items-start gap-3 pointer-events-auto transform transition-all duration-300 opacity-0 translate-y-4">
+    <div id="toastIcon" class="flex-shrink-0 text-green-500">
+      <i class="fas fa-check-circle text-2xl"></i>
+    </div>
+
+    <div class="flex-1">
+      <p id="toastText" class="text-gray-800 font-medium">Form submitted successfully!</p>
+      <p id="toastSub" class="text-xs text-gray-500 mt-1 hidden"></p>
+    </div>
+
+    <button id="toastClose" aria-label="Close notification" class="ml-3 text-gray-400 hover:text-gray-600 focus:outline-none">
+      <i class="fas fa-xmark"></i>
+    </button>
+  </div>
+</div>
+
+
+
+<section class="bg-white py-16 px-4 mt-20 rounded-[17%]">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+    
+    <!-- Our Mission -->
+    <div>
+      <h2 class="text-2xl font-semibold mb-3 border-b-2 border-red-600 inline-block pb-1">Our Mission</h2>
+      <p class=" leading-relaxed mt-4">
+        The mission of Cheliv Compassionate Care Plus INC is simply to be the very best in what we do in a customized and conductive environment, which benefits our clients and their families. We are confident in our ability to provide and serve the needs of your loved ones 24/7 as we would do for our own family members.
+      </p>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h2 class="text-2xl font-semibold mb-3 border-b-2 border-red-600 inline-block pb-1">Contact Us</h2>
+      <p class="mt-4">Cheliv Compassionate Care Plus INC</p>
+      <p class="mt-2">Office: <a href="tel:2819037551" class="text-lime-300 hover:underline">000-000-0000</a></p>
+      <p>Fax: <span>000-000-0000</span></p>
+      <a href="#requestForm" class="text-sky-400 font-medium mt-3 inline-block hover:underline">Send a Message</a>
+    </div>
+
+    <!-- Office Location -->
+    <div>
+      <h2 class="text-2xl font-semibold mb-3 border-b-2 border-red-600 inline-block pb-1">Office Location</h2>
+      <p class="mt-4">Cheliv Compassionate Care Plus INC</p>
+      <p> 4434 Blue Bonnet Dr, Suite 151, </p>
+      <p>Stafford, TX 77477</p>
+    </div>
+
+    <!-- Office Hours -->
+    <div>
+      <h2 class="text-2xl font-semibold mb-3 border-b-2 border-red-600 inline-block pb-1">Office Hours</h2>
+      <ul class="mt-4 space-y-1">
+        <li class="flex justify-between"><span>Monday</span><span>9:00 am - 5:00 pm</span></li>
+        <li class="flex justify-between"><span>Tuesday</span><span>9:00 am - 5:00 pm</span></li>
+        <li class="flex justify-between"><span>Wednesday</span><span>9:00 am - 5:00 pm</span></li>
+        <li class="flex justify-between"><span>Thursday</span><span>9:00 am - 5:00 pm</span></li>
+        <li class="flex justify-between"><span>Friday</span><span>9:00 am - 5:00 pm</span></li>
+        <li class="flex justify-between"><span>Saturday</span><span>Closed</span></li>
+        <li class="flex justify-between"><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="text-center text-sm mt-12 border-t border-gray-700 pt-6">
+    Copyright © 2025 Cheliv Compassionate Care Plus INC. Designed: Created by justice.
+  </div>
+</section>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
