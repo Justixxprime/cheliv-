@@ -490,6 +490,9 @@
 
   <!-- FORM -->
   <form id="requestForm" class="bg-white rounded-2xl shadow p-8 space-y-6 max-w-3xl mx-auto">
+    <!-- Honeypot anti-bot field (must stay hidden) -->
+    <input type="text" id="hpField" name="hpField" class="hidden" autocomplete="off">
+
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <input type="text" name="firstName" placeholder="First Name" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none" required>
       <input type="text" name="lastName" placeholder="Last Name" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none" required>
@@ -502,12 +505,11 @@
 
     <textarea name="reason" rows="5" placeholder="Reason of Inquiry" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-lime-300 outline-none"></textarea>
 
-    <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 mx-auto transition-all">
-      Submit
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </button>
+    <button id="submitBtn" type="submit" 
+  class="w-full bg-sky-600 hover:bg-sky-700 text-white py-3 rounded-md text-lg font-semibold transition-colors">
+  Submit Request
+</button>
+
   </form>
 
  <!-- TOAST (replace previous toast markup with this) -->
@@ -587,3 +589,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
